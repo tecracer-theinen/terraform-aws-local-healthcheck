@@ -1,6 +1,5 @@
 .envrc
 .gitignore.swp
-provider.tf
 .terraform
 .terraform.lock.hcl
 .terraform.tfstate.lock.info
@@ -9,3 +8,5 @@ terraform.tfstate.backup
 terraform.tfstate
 terraform.tfstate.d/
 *workspace
+src/.ruff_cache
+builds/

@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Format Code",
+      "type": "shell",
+      "command": "/usr/local/bin/terraform",
+      "args": ["fmt"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "statusbar": {
+          "label": "$(eye) Format Code",
+          "color": "#FFA500",
+          "tooltip": "Run terraform fmt"
+        }
+      }
+    }
+  ]
+}

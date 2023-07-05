@@ -11,29 +11,43 @@
       "installOhMyZsh": false
     },
     "ghcr.io/devcontainers/features/go:1": {
-      "version": "1.19"
+      "version": "1.20"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.10"
     },
     "ghcr.io/devcontainers/features/terraform:1": {
-      "version": "1.4.6",
-      "tflint": "0.46.1"
+      "version": "1.5.2",
+      "tflint": "0.47.0"
     }
   },
   "customizations": {
     "vscode": {
       "settings": {
-        "editor.renderFinalNewline": true,
+        "editor.renderFinalNewline": "on",
         "editor.renderWhitespace": "all",
         "editor.trimAutoWhitespace": true,
         "files.exclude": {
           ".terraform": true,
           ".terraform.lock.hcl": true,
           "terraform.tfstate.backup": true
-        }
+        },
+        "[python]": {
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll": true,
+            "source.organizeImports": true
+          }
+        },
+        "python.formatting.provider": "black"
       },
       "extensions": [
+        "actboy168.tasks",
+        "charliermarsh.ruff",
         "editorconfig.editorconfig",
         "hashicorp.terraform",
         "mkhl.direnv",
+        "ms-python.python",
         "VisualStudioExptTeam.vscodeintellicode"
       ]
     }
