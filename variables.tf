@@ -3,7 +3,7 @@ variable "name" {
   type        = string
 
   validation {
-    condition     = !strcontains(var.name, " ")
+    condition     = length(regexall(" ", var.name)) == 0
     error_message = "No spaces are allowed in the name"
   }
 }
