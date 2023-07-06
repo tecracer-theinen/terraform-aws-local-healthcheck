@@ -154,19 +154,16 @@ module "lambda_function" {
 
   function_name = "local_healthcheck_${local.name}"
   description   = "Retrieve input and transform for CW Logs"
-  handler       = "function.lambda_handler"
   publish       = true
   timeout       = 10
 
-  runtime = "python3.10"
+  runtime     = "python3.10"
+  handler     = "function.lambda_handler"
+  source_path = "${path.module}/src/"
 
   environment_variables = {
     NAMESPACE = var.name
   }
-
-  source_path = [{
-    path = "src/"
-  }]
 
   allowed_triggers = {
     EventBridge = {
